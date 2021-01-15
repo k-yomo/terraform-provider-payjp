@@ -6,7 +6,7 @@ import (
 	"log"
 
 	"github.com/hashicorp/terraform-plugin-sdk/v2/plugin"
-	"github.com/hashicorp/terraform-provider-scaffolding/internal/provider"
+	"github.com/k-yomo/terraform-provider-payjp/internal/provider"
 )
 
 // Run "go generate" to format example terraform files and generate the docs for the registry/website
@@ -23,9 +23,6 @@ var (
 	// these will be set by the goreleaser configuration
 	// to appropriate values for the compiled binary
 	version string = "dev"
-
-	// goreleaser can also pass the specific commit if you want
-	// commit  string = ""
 )
 
 func main() {
@@ -37,8 +34,7 @@ func main() {
 	opts := &plugin.ServeOpts{ProviderFunc: provider.New(version)}
 
 	if debugMode {
-		// TODO: update this string with the full name of your provider as used in your configs
-		err := plugin.Debug(context.Background(), "registry.terraform.io/hashicorp/scaffolding", opts)
+		err := plugin.Debug(context.Background(), "registry.terraform.io/k-yomo/payjp", opts)
 		if err != nil {
 			log.Fatal(err.Error())
 		}

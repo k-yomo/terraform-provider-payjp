@@ -1,20 +1,26 @@
 ---
-page_title: "scaffolding Provider"
+page_title: "payjp Provider"
 subcategory: ""
 description: |-
   
 ---
 
-# scaffolding Provider
+# payjp Provider
 
 
 
 ## Example Usage
 
 ```terraform
-provider "scaffolding" {
-  # example configuration here
+variable "payjp_api_key" {}
+
+provider "payjp" {
+  api_key = var.payjp_api_key
 }
 ```
 
 ## Schema
+
+### Optional
+
+- **api_key** (String)
