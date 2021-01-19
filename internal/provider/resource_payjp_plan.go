@@ -14,6 +14,9 @@ func resourcePayJPPlan() *schema.Resource {
 		ReadContext:   resourcePayJPPlanRead,
 		UpdateContext: resourcePayJPPlanUpdate,
 		DeleteContext: resourcePayJPPlanDelete,
+		Importer: &schema.ResourceImporter{
+			StateContext: schema.ImportStatePassthroughContext,
+		},
 		Schema: map[string]*schema.Schema{
 			"plan_id": {
 				Type:     schema.TypeString,
