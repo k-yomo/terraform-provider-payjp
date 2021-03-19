@@ -26,6 +26,9 @@ func New(version string) func() *schema.Provider {
 			ResourcesMap: map[string]*schema.Resource{
 				"payjp_plan": resourcePayJPPlan(),
 			},
+			DataSourcesMap: map[string]*schema.Resource{
+				"payjp_account": dataPayJPAccount(),
+			},
 		}
 		p.ConfigureContextFunc = configure(version, p)
 		return p

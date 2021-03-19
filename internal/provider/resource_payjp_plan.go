@@ -103,16 +103,16 @@ func resourcePayJPPlanRead(_ context.Context, d *schema.ResourceData, m interfac
 	if err != nil {
 		d.SetId("")
 		return diag.FromErr(err)
-	} else {
-		d.Set("plan_id", planRes.ID)
-		d.Set("name", planRes.Name)
-		d.Set("amount", planRes.Amount)
-		d.Set("currency", planRes.Currency)
-		d.Set("interval", planRes.Interval)
-		d.Set("trial_days", planRes.TrialDays)
-		d.Set("billing_day", planRes.BillingDay)
-		d.Set("metadata", planRes.Metadata)
 	}
+
+	d.Set("plan_id", planRes.ID)
+	d.Set("name", planRes.Name)
+	d.Set("amount", planRes.Amount)
+	d.Set("currency", planRes.Currency)
+	d.Set("interval", planRes.Interval)
+	d.Set("trial_days", planRes.TrialDays)
+	d.Set("billing_day", planRes.BillingDay)
+	d.Set("metadata", planRes.Metadata)
 	return nil
 }
 
