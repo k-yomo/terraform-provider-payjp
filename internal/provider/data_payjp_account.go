@@ -18,7 +18,7 @@ func dataPayJPAccount() *schema.Resource {
 				Computed: true,
 			},
 			"email": {
-				Type: schema.TypeString,
+				Type:     schema.TypeString,
 				Computed: true,
 			},
 			"created_at": {
@@ -35,67 +35,67 @@ func dataPayJPAccount() *schema.Resource {
 							Computed: true,
 						},
 						"bank_enabled": {
-							Type: schema.TypeBool,
+							Type:     schema.TypeBool,
 							Computed: true,
 						},
 						"brands_accepted": {
-							Type: schema.TypeString,
+							Type:     schema.TypeString,
 							Computed: true,
 						},
 						"currencies_supported": {
-							Type: schema.TypeString,
+							Type:     schema.TypeString,
 							Computed: true,
 						},
 						"default_currency": {
-							Type: schema.TypeString,
+							Type:     schema.TypeString,
 							Computed: true,
 						},
 						"business_type": {
-							Type: schema.TypeString,
+							Type:     schema.TypeString,
 							Computed: true,
 						},
 						"contact_phone": {
-							Type: schema.TypeString,
+							Type:     schema.TypeString,
 							Computed: true,
 						},
 						"country": {
-							Type: schema.TypeString,
+							Type:     schema.TypeString,
 							Computed: true,
 						},
 						"charge_type": {
-							Type: schema.TypeString,
+							Type:     schema.TypeString,
 							Computed: true,
 						},
 						"product_detail": {
-							Type: schema.TypeString,
+							Type:     schema.TypeString,
 							Computed: true,
 						},
 						"product_name": {
-							Type: schema.TypeString,
+							Type:     schema.TypeString,
 							Computed: true,
 						},
 						"product_type": {
-							Type: schema.TypeString,
+							Type:     schema.TypeString,
 							Computed: true,
 						},
 						"details_submitted": {
-							Type: schema.TypeBool,
+							Type:     schema.TypeBool,
 							Computed: true,
 						},
 						"live_mode_enabled": {
-							Type: schema.TypeBool,
+							Type:     schema.TypeBool,
 							Computed: true,
 						},
 						"live_mode_activated_at": {
-							Type: schema.TypeString,
+							Type:     schema.TypeString,
 							Computed: true,
 						},
 						"site_published": {
-							Type: schema.TypeBool,
+							Type:     schema.TypeBool,
 							Computed: true,
 						},
 						"url": {
-							Type: schema.TypeString,
+							Type:     schema.TypeString,
 							Computed: true,
 						},
 					},
@@ -118,6 +118,7 @@ func dataPayJPPlanRead(_ context.Context, d *schema.ResourceData, m interface{})
 	d.Set("email", accountRes.Email)
 	d.Set("created_at", accountRes.CreatedAt.Format(time.RFC3339))
 	d.Set("merchant", map[string]interface{}{
+		"merchant_id":            accountRes.Merchant.ID,
 		"bank_enabled":           accountRes.Merchant.BankEnabled,
 		"brands_accepted":        accountRes.Merchant.BrandsAccepted,
 		"currencies_supported":   accountRes.Merchant.CurrenciesSupported,

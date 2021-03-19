@@ -6,7 +6,7 @@ description: |-
   A configuration for an Account
 ---
 
-# Data Source `payjp_account`
+# payjp_account (Data Source)
 
 A configuration for an Account
 
@@ -23,7 +23,7 @@ data "payjp_account" "example" {}
 
 - **id** (String) The ID of this resource.
 
-### Read-only
+### Read-Only
 
 - **account_id** (String)
 - **created_at** (String)
@@ -33,7 +33,7 @@ data "payjp_account" "example" {}
 <a id="nestedatt--merchant"></a>
 ### Nested Schema for `merchant`
 
-Read-only:
+Read-Only:
 
 - **bank_enabled** (Boolean)
 - **brands_accepted** (String)

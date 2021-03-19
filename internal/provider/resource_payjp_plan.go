@@ -9,7 +9,7 @@ import (
 
 func resourcePayJPPlan() *schema.Resource {
 	return &schema.Resource{
-		Description: "A configuration for a plan",
+		Description:   "A configuration for a plan",
 		CreateContext: resourcePayJPPlanCreate,
 		ReadContext:   resourcePayJPPlanRead,
 		UpdateContext: resourcePayJPPlanUpdate,

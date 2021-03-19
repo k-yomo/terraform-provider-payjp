@@ -6,7 +6,7 @@ description: |-
   A configuration for a plan
 ---
 
-# Resource `payjp_plan`
+# payjp_plan (Resource)
 
 A configuration for a plan
 
